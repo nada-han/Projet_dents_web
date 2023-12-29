@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  frontend-container:
+    image: nadahan/project:frontend-tag
+    container_name: frontend-container
+    networks:
+      - spring-mysql-net
+    ports:
+      - "3000:3000"
+    restart: always
+
+    depends_on:
+      mysqldb2:
+        condition: service_healthy
+
+  backend-container:
+    image: nadahan/project:backend-tag
+    container_name: backend-container
+    networks:
+      - spring-mysql-net
+    ports:
+      - "8085:8085"
+    restart: always
+
+    depends_on:
+      mysqldb2:
+        condition: service_healthy
+
+  mysqldb2:
+    image: nadahan/project:mysql-tag
+    container_name: mysqldb2
+    networks:
+      - spring-mysql-net
+    environment:
+      MYSQL_DATABASE: dentaire
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      retries: 10
+      interval: 3s
+      timeout: 30s
+    restart: always
+
+networks:
+  spring-mysql-net:
+    driver: bridge

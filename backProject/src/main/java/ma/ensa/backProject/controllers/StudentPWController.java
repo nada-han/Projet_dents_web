@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/students/pws")
-@CrossOrigin(origins = "http://localhost:3006")
+@CrossOrigin(origins = "*")
 public class StudentPWController {
 
     private final StudentPWService studentPWService;

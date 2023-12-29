@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/angles")
+@CrossOrigin(origins = "*")
+
 public class AngleController {
 
     @Autowired
