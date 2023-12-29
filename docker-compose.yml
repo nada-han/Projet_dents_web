@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  spring-mysql-net:
+    driver: bridge
+
 services:
   frontend-container:
     image: nadahan/project:frontend-tag
@@ -9,7 +13,6 @@ services:
     ports:
       - "3000:3000"
     restart: always
-
     depends_on:
       mysqldb2:
         condition: service_healthy
@@ -22,7 +25,6 @@ services:
     ports:
       - "8085:8085"
     restart: always
-
     depends_on:
       mysqldb2:
         condition: service_healthy
@@ -42,7 +44,3 @@ services:
       interval: 3s
       timeout: 30s
     restart: always
-
-networks:
-  spring-mysql-net:
-    driver: bridge
