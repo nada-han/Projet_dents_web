@@ -18,7 +18,7 @@ function AjGrp() {
     // Faire une requête GET pour récupérer la liste des professeurs
     const fetchProfessors = async () => {
       try {
-        const response = await axios.get("http://localhost:8085/api/professors");
+        const response = await axios.get("https://violet-quince-production.up.railway.app/api/professors");
         setProfessors(response.data);
       } catch (error) {
         console.error("Error fetching professors:", error);
@@ -37,7 +37,7 @@ function AjGrp() {
     e.preventDefault();
     try {
       // Faire une requête POST pour créer un nouveau groupe
-      await axios.post("http://localhost:8085/api/groupes", formData);
+      await axios.post("https://violet-quince-production.up.railway.app/api/groupes", formData);
       // Handle success, e.g., redirect or show a success message
     } catch (error) {
       // Handle error, e.g., show an error message
