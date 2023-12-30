@@ -27,7 +27,7 @@ function Groupe() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8085/api/groupes");
+        const response = await axios.get("https://violet-quince-production.up.railway.app/api/groupes");
         setGroupes(response.data);
         setError('');
       } catch (error) {
@@ -43,7 +43,7 @@ function Groupe() {
 
   const handleDelete = async (groupeId) => {
     try {
-      await axios.delete(`http://localhost:8085/api/groupes/${groupeId}`);
+      await axios.delete(`https://violet-quince-production.up.railway.app/api/groupes/${groupeId}`);
       setGroupes((prevGroupes) => prevGroupes.filter((groupe) => groupe.id !== groupeId));
     } catch (error) {
       console.error("Error deleting groupe:", error);
@@ -65,7 +65,7 @@ function Groupe() {
         year: modifiedYear,
       };
 
-      await axios.put(`http://localhost:8085/api/groupes/${selectedGroupe.id}`, updatedGroupe);
+      await axios.put(`https://violet-quince-production.up.railway.app/api/groupes/${selectedGroupe.id}`, updatedGroupe);
 
       setGroupes((prevGroupes) =>
         prevGroupes.map((groupe) =>
