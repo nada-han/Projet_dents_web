@@ -39,7 +39,7 @@ function Table() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8085/api/professors");
+        const response = await axios.get("https://violet-quince-production.up.railway.app/api/professors");
         setProfessors(response.data);
         setError('');
       } catch (error) {
@@ -60,7 +60,7 @@ function Table() {
 
   const handleConfirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8085/api/professors/${selectedProfessorForDeletion.id}`);
+      await axios.delete(`https://violet-quince-production.up.railway.app/api/professors/${selectedProfessorForDeletion.id}`);
       setProfessors((prevProfessors) =>
         prevProfessors.filter((professor) => professor.id !== selectedProfessorForDeletion.id)
       );
@@ -97,7 +97,7 @@ function Table() {
         password: modifiedPassword,
       };
 
-      await axios.put(`http://localhost:8085/api/professors/${selectedProfessor.id}`, updatedProfessor);
+      await axios.put(`https://violet-quince-production.up.railway.app/api/professors/${selectedProfessor.id}`, updatedProfessor);
 
       setProfessors((prevProfessors) =>
         prevProfessors.map((professor) =>
