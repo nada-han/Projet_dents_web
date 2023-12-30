@@ -12,7 +12,7 @@ const StudentPW = () => {
 
   const fetchStudentPWs = async () => {
     try {
-      const response = await axios.get('http://localhost:8085/api/students/pws');
+      const response = await axios.get('https://violet-quince-production.up.railway.app/api/students/pws');
       setStudentPWs(response.data);
     } catch (error) {
       console.error('Error fetching StudentPWs:', error);
@@ -21,7 +21,7 @@ const StudentPW = () => {
 
   const fetchPWs = async () => {
     try {
-      const response = await axios.get('http://localhost:8085/api/pws');
+      const response = await axios.get('https://violet-quince-production.up.railway.app/api/pws');
       setPWs(response.data);
     } catch (error) {
        console.error('Error fetching PWs:', error);
@@ -30,7 +30,7 @@ const StudentPW = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:8085/api/students');
+      const response = await axios.get('https://violet-quince-production.up.railway.app/api/students');
       setStudents(response.data);
     } catch (error) {
       console.error('Error fetching students:', error);
