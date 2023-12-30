@@ -26,7 +26,7 @@ function Form() {
     e.preventDefault();
     try {
       // Make a POST request to create a new professor
-      await axios.post("http://localhost:8085/api/professors", formData);
+      await axios.post("https://violet-quince-production.up.railway.app/api/professors", formData);
       // Handle success, e.g., redirect or show a success message
     } catch (error) {
       // Handle error, e.g., show an error message
