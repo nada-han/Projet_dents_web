@@ -26,7 +26,7 @@ function Form() {
     e.preventDefault();
     try {
       // Make a POST request to create a new student
-      await axios.post("http://localhost:8085/api/students", formData);
+      await axios.post("https://violet-quince-production.up.railway.app/api/students", formData);
       // Handle success, e.g., redirect or show a success message
     } catch (error) {
       // Handle error, e.g., show an error message
