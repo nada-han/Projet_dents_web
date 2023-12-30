@@ -31,8 +31,9 @@ https://github.com/nada-han/Projet_dents_web/assets/124934843/978321e6-128f-426b
 
 
 ### Technologies Utilisées:
-- Framework mobile : React
-- Backend : SpringBoot 
+- Frontend : React
+- Backend : SpringBoot
+- Mobile : Android
 - Base de données : Mysql
 - Traitement d'image : OpenCV
 - Qualité de code : SonarQube
